@@ -16,7 +16,11 @@ Add a `/health_check` endpoint in each application that returns any `20x` status
 
 Clone this repo, run `bundle install`, and run `bundle exec rackup`.
 
-[Point ELB's health checker](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html) at the port where this Rack application is running and
+[Point ELB's health checker](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html) at the port where this Rack application is running (default is 9292). Use an HTTP for the protocol and use `/` as the path.
+
+Verify it succeeds/fails based on the status of your app.
+
+You probably want to keep this running with something like upstart, monit, or systemd instead of running it manually, but that's outside the scope of this document and specific to your configuration.
 
 ## Caveats
 
