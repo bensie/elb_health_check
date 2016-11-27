@@ -1,7 +1,7 @@
 require "bundler"
 Bundler.require
 
-hostnames = Array(ENV["HEALTH_CHECK_HOSTNAMES"]).split(",").reject(&:empty?)
+hostnames = Array(ENV["HEALTH_CHECK_HOSTNAMES"].to_s.split(",")).reject(&:empty?)
 
 run -> (env) {
   ok = true
