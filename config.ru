@@ -24,7 +24,7 @@ run -> (env) {
     results
   end
 
-  response_status = filtered_results.all? { |r| r[1] == :success } ? "200" : "500"
+  response_status = filtered_results.all? { |r| r.values[0][:check] == :success } ? "200" : "500"
 
   [response_status, {"Content-Type" => "application/json"}, [JSON.dump(results)]]
 }
