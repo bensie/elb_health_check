@@ -10,7 +10,7 @@ run -> (env) {
 
   Parallel.each(hostnames) do |hostname|
     code = Http.headers({ "Host" => hostname, "X-Forwarded-Proto" => "https" }).head("http://127.0.0.1:80/health_check").code rescue nil
-    if !code.to_i.between(200, 209)
+    if !code.to_i.between?(200, 209)
       ok = false
       raise Parallel::Kill # If one fails, we don't need to wait for the rest.
     end
