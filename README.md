@@ -23,6 +23,7 @@ Clone this repo, run `bundle install`, and run `bundle exec rackup`.
 * If you have multiple apps and _any_ app fails to return a `20x` status code, the entire node will be considered unhealthy. So if two unrelated apps are running on the same server behind the same load balancer and one gets hit with a bad deploy that breaks the `/health_check` endpoint, the entire node will be taken out of service.
 * Requests to applications are made concurrently to keep things as quick as possible, but if you have oodles of applications running on a server, this may time out before it's able to respond to ELB. You can tune the `HealthCheckTimeoutSeconds` setting if necessary.
 * If your application spawns processes from the first request after a timeout, keep in mind this is going to hit all the apps at the same time, which could cause load spikes and/or timeouts.
+* You better monitor this process and make sure it stays running! If it isn't running, your health check is going to fail and the node will be taken out of service.
 
 ## Copyright
 
