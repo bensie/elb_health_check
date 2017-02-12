@@ -3,9 +3,9 @@ GEM
   specs:
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
-    domain_name (0.5.20161021)
+    domain_name (0.5.20161129)
       unf (>= 0.0.5, < 1.0.0)
-    http (2.1.0)
+    http (2.2.1)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
       http-form_data (~> 1.0.1)
@@ -15,8 +15,8 @@ GEM
     http-form_data (1.0.1)
     http_parser.rb (0.6.0)
     parallel (1.10.0)
-    public_suffix (2.0.4)
-    puma (3.6.2)
+    public_suffix (2.0.5)
+    puma (3.7.0)
     rack (2.0.1)
     unf (0.1.4)
       unf_ext
@@ -32,4 +32,4 @@ DEPENDENCIES
   rack
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
